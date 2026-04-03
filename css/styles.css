@@ -1,0 +1,425 @@
+/* ========================================
+   Longley's Restaurant — Branford, CT
+   ======================================== */
+
+:root {
+  --green-dark: #1a5632;
+  --green-mid: #2d8a4e;
+  --green-light: #8bc34a;
+  --gold: #d4a843;
+  --cream: #f5f1e8;
+  --dark: #1a1a1a;
+  --dark-overlay: rgba(0, 0, 0, 0.6);
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --max-width: 1200px;
+  --section-pad: clamp(3rem, 8vw, 6rem);
+}
+
+/* Reset */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--dark);
+  background: var(--cream);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+
+.container {
+  width: min(var(--max-width), 100% - 2rem);
+  margin-inline: auto;
+}
+
+/* ---- Header / Nav ---- */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: var(--dark);
+  transition: background 0.3s;
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+}
+
+.logo img {
+  height: 50px;
+  width: auto;
+}
+
+.nav-list {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-list a {
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.nav-list a:hover { color: var(--green-light); }
+
+.nav-cta {
+  background: var(--green-mid);
+  color: #fff !important;
+  padding: 0.5rem 1.25rem;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.nav-cta:hover { background: var(--green-dark); }
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* ---- Hero ---- */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  background: var(--dark) url('../images/patio-bar-night.jpg') center/cover no-repeat;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--dark-overlay);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  padding: 2rem 1rem;
+}
+
+.hero-content h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.hero-content h1 .accent { color: var(--green-light); }
+
+.hero-content p {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.85rem 2rem;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.btn:hover { transform: translateY(-2px); }
+
+.btn-primary {
+  background: var(--green-mid);
+  color: #fff;
+}
+
+.btn-primary:hover { background: var(--green-dark); }
+
+.btn-outline {
+  border: 2px solid #fff;
+  color: #fff;
+  margin-left: 0.75rem;
+}
+
+.btn-outline:hover {
+  background: #fff;
+  color: var(--dark);
+}
+
+/* ---- Sections ---- */
+section { padding: var(--section-pad) 0; }
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #666;
+  margin-bottom: 3rem;
+  font-size: 1.05rem;
+}
+
+/* ---- About ---- */
+.about { background: #fff; }
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.about-img {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.about-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-text h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  margin-bottom: 1rem;
+}
+
+.about-text p {
+  margin-bottom: 1rem;
+  color: #444;
+}
+
+.about-text .highlight {
+  color: var(--green-dark);
+  font-weight: 600;
+}
+
+/* ---- Events ---- */
+.events { background: var(--cream); }
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.event-card {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  aspect-ratio: 1;
+  cursor: pointer;
+}
+
+.event-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s;
+}
+
+.event-card:hover img { transform: scale(1.05); }
+
+.event-card .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+  color: #fff;
+}
+
+.event-card .overlay h3 {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  margin-bottom: 0.25rem;
+}
+
+.event-card .overlay p {
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+/* ---- Drinks / Parallax ---- */
+.drinks {
+  position: relative;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  background: var(--dark) url('../images/whiskey-bg.jpg') center/cover no-repeat fixed;
+}
+
+.drinks::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+}
+
+.drinks-content {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+}
+
+.drinks-content h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 1rem;
+}
+
+.drinks-content p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin-bottom: 2rem;
+}
+
+/* ---- Catering ---- */
+.catering { background: #fff; }
+
+.catering-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.catering-img {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.catering-img img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.catering-text h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  margin-bottom: 1rem;
+}
+
+.catering-text p {
+  color: #444;
+  margin-bottom: 1.5rem;
+}
+
+/* ---- Info Bar ---- */
+.info-bar {
+  background: var(--green-dark);
+  color: #fff;
+  padding: 3rem 0;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  text-align: center;
+}
+
+.info-item h3 {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.info-item p {
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.info-item a {
+  color: var(--green-light);
+  font-weight: 600;
+}
+
+/* ---- Footer ---- */
+.site-footer {
+  background: var(--dark);
+  color: #aaa;
+  padding: 2.5rem 0;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.site-footer p + p { margin-top: 0.25rem; }
+.site-footer a { color: var(--green-light); }
+
+/* ---- Animations ---- */
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---- Mobile ---- */
+@media (max-width: 768px) {
+  .menu-toggle { display: block; }
+
+  .nav-list {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background: var(--dark);
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    transition: right 0.3s;
+  }
+
+  .nav-list.open { right: 0; }
+
+  .about-grid,
+  .catering-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .btn-outline { margin-left: 0; margin-top: 0.75rem; }
+
+  .hero-buttons { display: flex; flex-direction: column; align-items: center; }
+
+  .drinks { background-attachment: scroll; }
+}
