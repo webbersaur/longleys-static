@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Upgrade Proposal — Longley's Restaurant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green-dark: #1a5632;
+      --green-mid: #2d8a4e;
+      --green-light: #8bc34a;
+      --gold: #d4a843;
+      --cream: #f5f1e8;
+      --dark: #1a1a1a;
+      --red: #c0392b;
+      --font-heading: 'Playfair Display', Georgia, serif;
+      --font-body: 'Inter', system-ui, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--dark);
+      background: #f8f7f4;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ---- Hero / Cover ---- */
+    .proposal-hero {
+      background: linear-gradient(135deg, var(--green-dark) 0%, #0d3820 100%);
+      color: #fff;
+      text-align: center;
+      padding: 6rem 2rem 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .proposal-hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 600px;
+      height: 600px;
+      background: rgba(255,255,255,0.03);
+      border-radius: 50%;
+    }
+
+    .proposal-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -10%;
+      width: 400px;
+      height: 400px;
+      background: rgba(255,255,255,0.02);
+      border-radius: 50%;
+    }
+
+    .proposal-hero h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      line-height: 1.15;
+      margin-bottom: 1rem;
+      position: relative;
+    }
+
+    .proposal-hero .client {
+      font-size: 1.2rem;
+      opacity: 0.85;
+      margin-bottom: 0.5rem;
+    }
+
+    .proposal-hero .byline {
+      font-size: 0.95rem;
+      opacity: 0.6;
+      margin-top: 1.5rem;
+    }
+
+    .proposal-hero .divider {
+      width: 60px;
+      height: 3px;
+      background: var(--green-light);
+      margin: 1.5rem auto;
+    }
+
+    /* ---- Container ---- */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ---- Sections ---- */
+    .section {
+      padding: 4rem 0;
+    }
+
+    .section:nth-child(even) {
+      background: #fff;
+    }
+
+    .section-number {
+      display: inline-block;
+      background: var(--green-dark);
+      color: #fff;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 36px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .section h2 {
+      font-family: var(--font-heading);
+      font-size: clamp(1.5rem, 3vw, 2.25rem);
+      color: var(--green-dark);
+      margin-bottom: 1rem;
+    }
+
+    .section h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      margin: 2rem 0 0.75rem;
+    }
+
+    .section p {
+      color: #444;
+      margin-bottom: 1rem;
+      max-width: 750px;
+    }
+
+    /* ---- Findings List ---- */
+    .findings {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .finding {
+      background: #fff;
+      border-left: 4px solid var(--red);
+      padding: 1rem 1.25rem;
+      border-radius: 0 8px 8px 0;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    }
+
+    .finding strong { color: var(--dark); }
+    .finding span { color: #555; }
+
+    /* ---- Benefits List ---- */
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+
+    .benefit {
+      background: #fff;
+      border-radius: 8px;
+      padding: 1.5rem;
+      border-left: 4px solid var(--green-mid);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    }
+
+    .benefit strong {
+      display: block;
+      color: var(--green-dark);
+      margin-bottom: 0.35rem;
+    }
+
+    .benefit span { color: #555; font-size: 0.95rem; }
+
+    /* ---- Comparison Table ---- */
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1.5rem;
+      font-size: 0.92rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .comparison-table thead th {
+      background: var(--green-dark);
+      color: #fff;
+      padding: 0.85rem 1rem;
+      text-align: left;
+      font-weight: 600;
+    }
+
+    .comparison-table tbody td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid #eee;
+      vertical-align: top;
+    }
+
+    .comparison-table tbody tr:nth-child(even) { background: #fafaf7; }
+    .comparison-table tbody tr:hover { background: #f0f7f1; }
+
+    .comparison-table td:first-child {
+      font-weight: 600;
+      color: var(--green-dark);
+      white-space: nowrap;
+    }
+
+    .comparison-table .current { color: #666; }
+    .comparison-table .proposed { color: var(--green-dark); }
+
+    /* ---- Preserve List ---- */
+    .preserve-list {
+      display: grid;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+
+    .preserve-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    .preserve-item .check {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      background: var(--green-mid);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      margin-top: 2px;
+    }
+
+    .preserve-item p { margin: 0; color: #444; }
+    .preserve-item strong { color: var(--dark); }
+
+    /* ---- Steps ---- */
+    .steps {
+      display: grid;
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+      counter-reset: step;
+    }
+
+    .step {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .step-num {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      background: var(--green-dark);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .step-content { padding-top: 0.35rem; }
+    .step-content strong { color: var(--dark); }
+    .step-content span { color: #555; }
+
+    /* ---- CTA Footer ---- */
+    .proposal-footer {
+      background: var(--green-dark);
+      color: #fff;
+      text-align: center;
+      padding: 3rem 2rem;
+    }
+
+    .proposal-footer h2 {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      color: #fff;
+    }
+
+    .proposal-footer p {
+      opacity: 0.8;
+      color: #fff;
+      max-width: none;
+    }
+
+    .proposal-footer a {
+      color: var(--green-light);
+      text-decoration: none;
+    }
+
+    /* ---- Animations ---- */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ---- Mobile ---- */
+    @media (max-width: 768px) {
+      .comparison-table { font-size: 0.82rem; }
+      .comparison-table td:first-child { white-space: normal; }
+      .benefits { grid-template-columns: 1fr; }
+    }
+
+    @media print {
+      .proposal-hero { padding: 3rem 2rem; }
+      .section { padding: 2rem 0; }
+      .fade-up { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <header class="proposal-hero">
+    <div class="container">
+      <p class="client">Longley's Restaurant &amp; Bar — Branford, CT</p>
+      <h1>Website Upgrade Proposal</h1>
+      <div class="divider"></div>
+      <p class="byline">Prepared by Webbersaurus Web Development &bull; April 2026</p>
+    </div>
+  </header>
+
+  <!-- 1. Current Assessment -->
+  <section class="section">
+    <div class="container fade-up">
+      <span class="section-number">1</span>
+      <h2>Current Site Assessment</h2>
+      <p>Your current site has done its job — it put Longley's online, drives phone calls, and shows up in local search. It runs on <strong>WordPress</strong>, which was the right call when it was built. But things have changed, and a simpler, faster site can do even more for you.</p>
+
+      <h3>Room to Grow</h3>
+      <div class="findings">
+        <div class="finding">
+          <strong>Too many moving parts</strong><br>
+          <span>WordPress needs plugins, updates, and a database just to show your menu and hours. That's a lot of machinery for a straightforward site.</span>
+        </div>
+        <div class="finding">
+          <strong>Speed has a ceiling</strong><br>
+          <span>Your site uses tools to speed things up, but they're working around the problem. A simpler site is just fast from the start.</span>
+        </div>
+        <div class="finding">
+          <strong>AI search is the future</strong><br>
+          <span>People are using ChatGPT, Siri, and Google AI to find restaurants. A clean, simple site is much easier for these tools to read and recommend.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Proposed Solution -->
+  <section class="section">
+    <div class="container fade-up">
+      <span class="section-number">2</span>
+      <h2>The New Site</h2>
+      <p>A custom-built website that's fast, simple, and built specifically for Longley's. No extra software, no plugins to manage — just a great-looking site that works.</p>
+
+      <h3>What You Get</h3>
+      <div class="benefits">
+        <div class="benefit">
+          <strong>Catering Menu</strong>
+          <span>A dedicated catering page with your full menu, easy to share with customers.</span>
+        </div>
+        <div class="benefit">
+          <strong>Looks Great on Phones</strong>
+          <span>Built for mobile first — because that's how most people find you.</span>
+        </div>
+        <div class="benefit">
+          <strong>Smooth Animations</strong>
+          <span>Content fades in as you scroll for a polished, modern feel.</span>
+        </div>
+        <div class="benefit">
+          <strong>Better Google Rankings</strong>
+          <span>Faster sites rank higher. This site loads almost instantly, which Google loves.</span>
+        </div>
+        <div class="benefit">
+          <strong>Same Look &amp; Feel</strong>
+          <span>Your logo, your colors, your photos — everything that makes it Longley's.</span>
+        </div>
+        <div class="benefit">
+          <strong>AI Search Ready</strong>
+          <span>When someone asks ChatGPT, Siri, or Google AI "where should I eat in Branford?" — this site is built to be the answer.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Comparison -->
+  <section class="section">
+    <div class="container fade-up">
+      <span class="section-number">3</span>
+      <h2>Side-by-Side Comparison</h2>
+
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Current Site</th>
+            <th>New Site</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Speed</td>
+            <td class="current">Good when cached, slower on first visit.</td>
+            <td class="proposed">Loads almost instantly, every time.</td>
+          </tr>
+          <tr>
+            <td>Security</td>
+            <td class="current">Safe if you keep everything updated.</td>
+            <td class="proposed">Nothing to hack — no login, no database.</td>
+          </tr>
+          <tr>
+            <td>Maintenance</td>
+            <td class="current">Needs regular software updates.</td>
+            <td class="proposed">None. It just works.</td>
+          </tr>
+          <tr>
+            <td>Google Rankings</td>
+            <td class="current">Decent, but site speed holds it back.</td>
+            <td class="proposed">Fast sites rank higher. This one flies.</td>
+          </tr>
+          <tr>
+            <td>Mobile</td>
+            <td class="current">Works on phones, but loads extra stuff.</td>
+            <td class="proposed">Built for phones first. Lean and fast.</td>
+          </tr>
+          <tr>
+            <td>Reliability</td>
+            <td class="current">Depends on hosting, database, and plugins.</td>
+            <td class="proposed">Basically never goes down.</td>
+          </tr>
+          <tr>
+            <td>AI Search</td>
+            <td class="current">AI tools have to dig through extra code.</td>
+            <td class="proposed">Easy for ChatGPT, Siri, and Google AI to read and recommend you.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 4. What We Preserve -->
+  <section class="section">
+    <div class="container fade-up">
+      <span class="section-number">4</span>
+      <h2>Nothing Gets Lost</h2>
+      <p>We're upgrading the engine, not changing the car. Everything that's working stays.</p>
+
+      <div class="preserve-list">
+        <div class="preserve-item">
+          <div class="check">&#10003;</div>
+          <p><strong>Your Google ranking</strong> — same domain, same Google Business Profile, no starting over.</p>
+        </div>
+        <div class="preserve-item">
+          <div class="check">&#10003;</div>
+          <p><strong>Your look</strong> — same logo, same colors, same photos, same vibe.</p>
+        </div>
+        <div class="preserve-item">
+          <div class="check">&#10003;</div>
+          <p><strong>Google Analytics</strong> — all your visitor data stays, nothing lost.</p>
+        </div>
+        <div class="preserve-item">
+          <div class="check">&#10003;</div>
+          <p><strong>Phone &amp; address</strong> — front and center, clickable on every page.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Next Steps -->
+  <section class="section">
+    <div class="container fade-up">
+      <span class="section-number">5</span>
+      <h2>Next Steps</h2>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <strong>Say the word</strong><br>
+            <span>You give us the green light, we collect the first third and get to work.</span>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <strong>We launch</strong><br>
+            <span>Site goes live, second third is due.</span>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <strong>Final payment &amp; a beer</strong><br>
+            <span>Last third, a cold one, and we toast to the new site.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <script>
+    const observer = new IntersectionObserver(
+      entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+      { threshold: 0.1 }
+    );
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
