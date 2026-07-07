@@ -271,6 +271,34 @@ section { padding: var(--section-pad) 0; }
   opacity: 0.85;
 }
 
+/* ---- Specials ---- */
+.specials { background: #fff; }
+
+.specials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.special-card {
+  background: var(--cream);
+  border-left: 4px solid var(--gold);
+  border-radius: 0 8px 8px 0;
+  padding: 1.5rem;
+}
+
+.special-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  color: var(--green-dark);
+  margin-bottom: 0.5rem;
+}
+
+.special-card p {
+  color: #444;
+  font-size: 0.95rem;
+}
+
 /* ---- Drinks / Parallax ---- */
 .drinks {
   position: relative;
