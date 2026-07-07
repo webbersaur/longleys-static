@@ -132,6 +132,16 @@ ul { list-style: none; }
 
 .hero-content h1 .accent { color: var(--green-light); }
 
+.hero-tagline {
+  font-family: var(--font-heading);
+  font-size: clamp(1rem, 2.4vw, 1.5rem);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.75rem !important;
+  opacity: 1 !important;
+}
+
 .hero-content p {
   font-size: clamp(1rem, 2vw, 1.25rem);
   margin-bottom: 2rem;
@@ -172,6 +182,9 @@ ul { list-style: none; }
 /* ---- Sections ---- */
 section { padding: var(--section-pad) 0; }
 
+/* Offset anchor jumps so the fixed header doesn't cover section titles */
+section[id] { scroll-margin-top: 80px; }
+
 .section-title {
   font-family: var(--font-heading);
   font-size: clamp(1.75rem, 4vw, 2.75rem);
@@ -184,6 +197,79 @@ section { padding: var(--section-pad) 0; }
   color: #666;
   margin-bottom: 3rem;
   font-size: 1.05rem;
+}
+
+/* ---- Quick Highlights ---- */
+.highlights {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+  background: var(--dark);
+  padding: 0;
+}
+
+.highlight-panel {
+  position: relative;
+  min-height: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+.highlight-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  transition: background 0.3s;
+}
+
+.highlight-panel:hover::before { background: rgba(0, 0, 0, 0.4); }
+
+.highlight-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 440px;
+  padding: 2rem 1.5rem;
+}
+
+.highlight-inner h3 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.6rem, 3vw, 2.5rem);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.75rem;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+}
+
+.highlight-inner p {
+  font-size: 1.02rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.95;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
+}
+
+.panel-btn {
+  display: inline-block;
+  background: var(--green-mid);
+  color: #fff;
+  padding: 0.8rem 2rem;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.highlight-panel:hover .panel-btn {
+  background: var(--green-dark);
+  transform: translateY(-2px);
 }
 
 /* ---- About ---- */
@@ -298,6 +384,202 @@ section { padding: var(--section-pad) 0; }
   color: #444;
   font-size: 0.95rem;
 }
+
+/* ---- Lunch Menu ---- */
+.lunch { background: var(--cream); }
+
+.lunch-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem 3rem;
+  max-width: 800px;
+  margin-inline: auto;
+}
+
+.lunch-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.15);
+  color: #333;
+  font-size: 1.02rem;
+}
+
+.lunch-list li::before {
+  content: '';
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gold);
+  transform: translateY(-1px);
+}
+
+.lunch-note {
+  text-align: center;
+  max-width: 720px;
+  margin: 2rem auto 0;
+  color: #555;
+  font-size: 0.98rem;
+}
+
+.lunch-note strong { color: var(--green-dark); }
+
+/* ---- Live Music & Events ---- */
+.music {
+  position: relative;
+  color: #fff;
+  background: #0d0d0d url('../images/patio-bar-night.jpg') center/cover no-repeat fixed;
+}
+
+.music::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(10, 20, 14, 0.9), rgba(6, 10, 8, 0.94));
+}
+
+.music > .container { position: relative; z-index: 1; }
+
+.music-eyebrow {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--gold);
+  margin-bottom: 0.6rem;
+}
+
+.music-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.9rem, 4vw, 3rem);
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.music-sub {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 3rem;
+  font-size: 1.05rem;
+}
+
+.music-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1rem;
+  max-width: 920px;
+  margin-inline: auto;
+}
+
+.gig {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1rem 1.25rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  backdrop-filter: blur(4px);
+  transition: transform 0.25s, border-color 0.25s, background 0.25s;
+}
+
+.gig:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(212, 168, 67, 0.6);
+}
+
+.gig-cal {
+  flex: none;
+  width: 62px;
+  height: 62px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: linear-gradient(160deg, var(--green-mid), var(--green-dark));
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+}
+
+.gig-mon {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--green-light);
+}
+
+.gig-day {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  line-height: 1;
+  color: #fff;
+}
+
+.gig-info { min-width: 0; }
+
+.gig-name {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  color: #fff;
+  margin-bottom: 0.15rem;
+}
+
+.gig-tag {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--gold);
+}
+
+.gig-featured {
+  background: rgba(212, 168, 67, 0.12);
+  border-color: rgba(212, 168, 67, 0.55);
+}
+
+.gig-featured .gig-cal {
+  background: linear-gradient(160deg, var(--gold), #b8862c);
+}
+
+.gig-featured .gig-mon { color: #fff8e6; }
+
+.music-note {
+  text-align: center;
+  margin-top: 2.5rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.98rem;
+}
+
+.music-note a { color: var(--gold); font-weight: 600; }
+
+/* ---- Gallery ---- */
+.gallery { background: var(--cream); }
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.gallery-item {
+  border-radius: 8px;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s;
+}
+
+.gallery-item:hover img { transform: scale(1.05); }
 
 /* ---- Drinks / Parallax ---- */
 .drinks {
@@ -441,13 +723,23 @@ section { padding: var(--section-pad) 0; }
   .nav-list.open { right: 0; }
 
   .about-grid,
-  .catering-grid {
+  .catering-grid,
+  .lunch-grid {
     grid-template-columns: 1fr;
   }
+
+  .lunch-grid { gap: 0; max-width: 480px; }
+
+  .highlights { grid-template-columns: 1fr; }
+  .highlight-panel { min-height: 280px; }
+
+  .gig { gap: 1rem; }
+  .gig-date { width: 84px; }
 
   .btn-outline { margin-left: 0; margin-top: 0.75rem; }
 
   .hero-buttons { display: flex; flex-direction: column; align-items: center; }
 
-  .drinks { background-attachment: scroll; }
+  .drinks,
+  .music { background-attachment: scroll; }
 }
