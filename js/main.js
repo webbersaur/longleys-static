@@ -72,6 +72,7 @@ async function renderSpecials() {
 
   const list = document.createElement('ul');
   list.className = 'hero-specials-list';
+  if (items.length > 6) list.classList.add('two-col'); // split long lists so they don't run down the page
   for (const item of items) {
     const li = document.createElement('li');
     li.textContent = item; // verbatim, as typed — textContent guards against markup

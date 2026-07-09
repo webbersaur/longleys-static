@@ -172,6 +172,12 @@ ul { list-style: none; }
   gap: 0.5rem;
 }
 
+/* Longer lists split into two columns so the hero doesn't run too far down. */
+.hero-specials-list.two-col {
+  grid-template-columns: 1fr 1fr;
+  column-gap: 1.75rem;
+}
+
 .hero-specials-list li {
   position: relative;
   padding-left: 1.25rem;
@@ -791,6 +797,7 @@ section[id] { scroll-margin-top: 80px; }
   .hero-buttons { display: flex; flex-direction: column; align-items: center; }
 
   .hero-specials { padding: 1.25rem 1.25rem; margin-top: 1.5rem; }
+  .hero-specials-list.two-col { grid-template-columns: 1fr; }
 
   .drinks,
   .music { background-attachment: scroll; }
