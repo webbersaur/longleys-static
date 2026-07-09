@@ -730,6 +730,7 @@ section[id] { scroll-margin-top: 80px; }
 
 /* ---- Footer ---- */
 .site-footer {
+  position: relative; /* anchors the hidden portal corner links */
   background: var(--dark);
   color: #aaa;
   padding: 2.5rem 0;
