@@ -92,3 +92,63 @@ async function renderSpecials() {
 }
 
 renderSpecials();
+
+// Newsletter signup — posts to the change-portal newsletter-subscribe edge
+// function (double opt-in: this only sends a confirmation email; the address
+// isn't subscribed until the recipient clicks the link). The endpoint is a
+// public --no-verify-jwt function, so no auth header is needed. Fails quietly
+// with an inline message; the honeypot 'website' field weeds out bots.
+const SIGNUP_ENDPOINT =
+  'https://gkixwwhxqclyxjfkolog.supabase.co/functions/v1/newsletter-subscribe';
+const SIGNUP_CLIENT_SLUG = 'longleys';
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+(function initSignup() {
+  const form = document.getElementById('signup-form');
+  if (!form) return;
+  const statusEl = document.getElementById('signup-status');
+  const emailEl = document.getElementById('signup-email');
+  const hpEl = document.getElementById('signup-website');
+  const btn = form.querySelector('button[type="submit"]');
+
+  const setStatus = (text, kind) => {
+    statusEl.textContent = text;
+    statusEl.className = 'signup-status' + (kind ? ' is-' + kind : '');
+  };
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = emailEl.value.trim();
+    if (!EMAIL_RE.test(email)) {
+      setStatus('Please enter a valid email address.', 'error');
+      return;
+    }
+    btn.disabled = true;
+    const label = btn.textContent;
+    btn.textContent = 'Signing up...';
+    setStatus('', '');
+    try {
+      const res = await fetch(SIGNUP_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          client_slug: SIGNUP_CLIENT_SLUG,
+          email,
+          website: hpEl ? hpEl.value : '',
+        }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (res.ok && data.ok) {
+        form.reset();
+        setStatus('Almost there — check your inbox and click the confirmation link to finish.', 'success');
+      } else {
+        setStatus(data.error || 'Something went wrong. Please try again.', 'error');
+      }
+    } catch {
+      setStatus('Network error. Please try again in a moment.', 'error');
+    } finally {
+      btn.disabled = false;
+      btn.textContent = label;
+    }
+  });
+})();

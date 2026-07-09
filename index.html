@@ -153,6 +153,25 @@
     </div>
   </section>
 
+  <!-- Email signup -->
+  <section id="signup" class="signup">
+    <div class="container signup-inner fade-in">
+      <h2>Never Miss a Night</h2>
+      <p>Get our weekly specials and the month's live music lineup sent straight to your inbox.</p>
+      <form id="signup-form" class="signup-form" novalidate>
+        <label for="signup-email" class="signup-visually-hidden">Email address</label>
+        <input type="email" id="signup-email" name="email" placeholder="you@email.com"
+          autocomplete="email" required>
+        <!-- Honeypot: hidden from people, catches bots. Leave empty. -->
+        <input type="text" name="website" id="signup-website" class="signup-hp"
+          tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button type="submit" class="btn signup-btn">Sign Me Up</button>
+      </form>
+      <p class="signup-status" id="signup-status" role="status" aria-live="polite"></p>
+      <p class="signup-fineprint">We'll email a confirmation link. Unsubscribe anytime.</p>
+    </div>
+  </section>
+
   <!-- Weekly Events -->
   <section id="events" class="events">
     <div class="container">
