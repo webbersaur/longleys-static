@@ -57,9 +57,10 @@ async function renderSpecials() {
     : [];
   if (!items.length) return;
 
-  // Expiry: hide once the posted week's Sunday night has passed.
+  // Expiry: require a valid timestamp and hide once it has passed. A missing or
+  // malformed `expires` fails clean (nothing shown) rather than sticking forever.
   const expiresAt = Date.parse(data.expires);
-  if (!Number.isNaN(expiresAt) && Date.now() > expiresAt) return;
+  if (Number.isNaN(expiresAt) || Date.now() > expiresAt) return;
 
   const heading = (typeof data.heading === 'string' && data.heading.trim())
     ? data.heading.trim()
@@ -92,6 +93,35 @@ async function renderSpecials() {
 }
 
 renderSpecials();
+
+// Live Music & Events auto-falloff — each `.gig` carries a data-date ("YYYY-MM-DD").
+// An event stays visible through its own day and drops at 11:45 PM that night, so
+// past events clear themselves without anyone editing the page. A missing or
+// malformed date is left alone (never auto-hidden). If every gig has passed, the
+// whole section is hidden rather than showing an empty list.
+function pruneEvents() {
+  const gigs = document.querySelectorAll('.music .gig[data-date]');
+  if (!gigs.length) return;
+  const now = Date.now();
+  let remaining = 0;
+  gigs.forEach(gig => {
+    const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(gig.getAttribute('data-date') || '');
+    if (!m) { remaining++; return; } // unparseable date — leave it visible
+    // Cutoff: 23:45 local time on the event day. Month is 0-indexed in the Date ctor.
+    const cutoff = new Date(Number(m[1]), Number(m[2]) - 1, Number(m[3]), 23, 45, 0).getTime();
+    if (now > cutoff) {
+      gig.hidden = true;
+    } else {
+      remaining++;
+    }
+  });
+  if (remaining === 0) {
+    const section = document.getElementById('music');
+    if (section) section.hidden = true;
+  }
+}
+
+pruneEvents();
 
 // Newsletter signup — posts to the change-portal newsletter-subscribe edge
 // function (double opt-in: this only sends a confirmation email; the address

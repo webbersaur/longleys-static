@@ -1,6 +1,10 @@
 /* ========================================
-   Longley's Restaurant — Branford, CT
+   Longley's Restaurant - Branford, CT
    ======================================== */
+
+/* Honor the [hidden] attribute even on elements with a display rule
+   (e.g. .gig uses display:flex). Used for auto-expiring events/specials. */
+[hidden] { display: none !important; }
 
 :root {
   --green-dark: #1a5632;
@@ -746,6 +750,19 @@ section[id] { scroll-margin-top: 80px; }
 
 .site-footer p + p { margin-top: 0.25rem; }
 .site-footer a { color: var(--green-light); }
+
+/* Hidden portal "magic" corner links (see index.html footer). */
+.portal-corner-link {
+  position: absolute;
+  bottom: 0;
+  width: 44px;
+  height: 44px;
+  display: block;
+  cursor: default;
+  z-index: 10;
+}
+.portal-corner-link--left { left: 0; }
+.portal-corner-link--right { right: 0; }
 
 /* ---- Animations ---- */
 .fade-in {
