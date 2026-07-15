@@ -1,6 +1,25 @@
 {
-  "posted": "2026-07-09",
-  "expires": "2026-07-12T23:59:59-04:00",
+  "posted": "2026-07-15",
+  "expires": "2026-07-19T23:59:59-04:00",
   "heading": "This Week's Specials",
-  "items": []
+  "items": [
+    "Bourbon Tenderloin Tips",
+    "Sautéed with mushrooms and onions, and served with garlic toast points.",
+    "Coconut Shrimp",
+    "Served with sweet chili aioli.",
+    "Twin Crab Cakes",
+    "Made with lump crab meat and served with pineapple salsa and a remoulade sauce.",
+    "Bavarian Pretzels",
+    "Served with craft beer cheese and honey mustard dressing.",
+    "Steak and Cheese Egg Rolls",
+    "Shaved steak and cheddar jack cheese with a spicy chipotle dipping sauce.",
+    "Meatballs",
+    "Your choice of marinara, fra diavolo, or bourbon sauce, served with garlic toast points.",
+    "Mozzarella Sticks",
+    "Your choice of regular or Cajun.",
+    "Fried Raviolis",
+    "Homemade and breaded in-house.",
+    "Pulled Pork Sliders (2)",
+    "Ahi Tuna or Shrimp Taco (2)"
+  ]
 }
