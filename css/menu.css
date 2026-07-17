@@ -1,0 +1,415 @@
+/* ---- Menu Page ---- */
+
+/* Active nav link (per-page, matches catering.css convention) */
+.nav-list .active { color: var(--green-light); }
+
+/* ---- Hero ---- */
+.menu-hero {
+  position: relative;
+  padding: clamp(8rem, 18vw, 11rem) 1rem clamp(2.5rem, 5vw, 3.5rem);
+  text-align: center;
+  color: #fff;
+  background: var(--dark) url('../images/tacos-platter.jpg') center/cover no-repeat;
+}
+
+.menu-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.85));
+}
+
+.menu-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.menu-hero-eyebrow {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.75rem;
+}
+
+.menu-hero-content h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-bottom: 0.75rem;
+}
+
+.menu-hero-content p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* ---- Sticky Category Jump-Nav ---- */
+.menu-jumpnav {
+  position: sticky;
+  top: 74px;
+  z-index: 90;
+  background: var(--green-dark);
+}
+
+.menu-jumpnav::before,
+.menu-jumpnav::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 32px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.menu-jumpnav::before {
+  left: 0;
+  background: linear-gradient(to right, var(--green-dark), transparent);
+}
+
+.menu-jumpnav::after {
+  right: 0;
+  background: linear-gradient(to left, var(--green-dark), transparent);
+}
+
+.jumpnav-list {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 0.85rem 1rem;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.jumpnav-list::-webkit-scrollbar { display: none; }
+
+.jumpnav-list a {
+  flex: none;
+  display: inline-block;
+  padding: 0.5rem 1.1rem;
+  border-radius: 999px;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.jumpnav-list a:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.jumpnav-list a.active {
+  background: var(--gold);
+  color: var(--dark);
+  border-color: var(--gold);
+}
+
+/* Offset anchor jumps so neither the fixed header nor the sticky jump-nav covers section titles */
+.menu-page section[id] { scroll-margin-top: 140px; }
+
+/* ---- Section Scaffolding ---- */
+.menu-section { padding: var(--section-pad) 0; }
+.menu-section-alt { background: #fff; }
+
+.menu-section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  text-align: center;
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+.menu-section-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--green-mid);
+  margin: 0.75rem auto 0;
+}
+
+.menu-section-intro {
+  text-align: center;
+  color: #666;
+  max-width: 640px;
+  margin: 1.25rem auto 0;
+  font-size: 0.98rem;
+}
+
+.menu-section-title + .menu-section-intro { margin-top: 1rem; }
+
+/* ---- Card Treatment (Salads, Bowls, Wraps) ---- */
+.menu-item-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.menu-item-card {
+  background: var(--cream);
+  border-top: 3px solid var(--gold);
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.menu-item-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  color: var(--green-dark);
+  margin-bottom: 0.5rem;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.menu-item-card h3::before {
+  content: '\2022';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.menu-item-card p {
+  color: #444;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* ---- Flow-List Treatment (Appetizers, Sandwiches, Entrees) ---- */
+.menu-flow-list {
+  column-width: 320px;
+  column-gap: 2.5rem;
+  margin-top: 2.5rem;
+}
+
+.menu-flow-item {
+  break-inside: avoid;
+  margin-bottom: 1.1rem;
+}
+
+.menu-flow-name {
+  font-weight: 600;
+  color: var(--dark);
+}
+
+.menu-flow-item .desc {
+  display: block;
+  font-size: 0.85rem;
+  color: #777;
+  font-style: italic;
+  margin-top: 0.15rem;
+}
+
+/* ---- Pill-List Treatment (Soups, Sides, Kids Menu) ---- */
+.menu-pill-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem 1rem;
+  max-width: 800px;
+  margin: 2.5rem auto 0;
+}
+
+.menu-pill {
+  background: var(--green-dark);
+  color: #fff;
+  padding: 0.5rem 1.15rem;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  white-space: nowrap;
+}
+
+.menu-pill-list--gold .menu-pill {
+  background: var(--gold);
+  color: var(--dark);
+}
+
+/* ---- Build Your Own Burgers (dark band) ---- */
+.menu-builder-section {
+  background: var(--green-dark);
+  color: #fff;
+  padding: var(--section-pad) 0;
+}
+
+.menu-builder-section .menu-section-title::after { background: var(--gold); }
+.menu-builder-section .menu-section-intro { color: rgba(255, 255, 255, 0.8); }
+
+.builder-note {
+  text-align: center;
+  max-width: 640px;
+  margin: 1.25rem auto 0;
+  font-size: 0.9rem;
+  color: var(--gold);
+}
+
+.builder-panel {
+  max-width: 900px;
+  margin: 2.5rem auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.builder-group-label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.75rem;
+}
+
+.chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.3rem;
+  background: transparent;
+  border: 1.5px solid var(--green-light);
+  color: #fff;
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  transition: background 0.2s, color 0.2s;
+}
+
+.chip:hover {
+  background: var(--green-mid);
+  border-color: var(--green-mid);
+}
+
+.chip-price {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--gold);
+}
+
+.chip:hover .chip-price { color: #fff; }
+
+/* ---- Longley's Wings ---- */
+.wings-panel { margin-top: 2.5rem; }
+
+.wings-counts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: 2.5rem;
+}
+
+.wings-count-badge {
+  background: var(--cream);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  color: var(--green-dark);
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.sauce-groups {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.sauce-group h3 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: var(--green-dark);
+  border-bottom: 2px solid var(--green-mid);
+  padding-bottom: 0.4rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.sauce-group .chip-list { gap: 0.5rem; }
+
+/* Wings chips sit on light section backgrounds, so restyle the base .chip for light bg */
+.wings-panel .chip {
+  color: var(--dark);
+  border-color: var(--green-mid);
+}
+
+.wings-panel .chip:hover {
+  background: var(--green-mid);
+  color: #fff;
+}
+
+.wings-panel .chip--wet {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--dark);
+}
+
+.wings-panel .chip--wet:hover {
+  background: #b8862c;
+  border-color: #b8862c;
+  color: #fff;
+}
+
+/* ---- Desserts ---- */
+.menu-desserts {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.menu-desserts p {
+  font-size: 1.15rem;
+  color: #444;
+}
+
+.menu-desserts strong { color: var(--green-dark); }
+
+/* ---- Closing CTA ---- */
+.menu-cta {
+  background: var(--green-dark);
+  color: #fff;
+  padding: var(--section-pad) 0;
+}
+
+.menu-cta h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  margin-bottom: 0.75rem;
+}
+
+.menu-cta p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.menu-cta a:not(.btn) { color: var(--green-light); }
+
+/* ---- Mobile ---- */
+@media (max-width: 768px) {
+  .menu-flow-list { column-count: 1; }
+  .sauce-groups { grid-template-columns: 1fr; gap: 2rem; }
+  .jumpnav-list a { padding: 0.45rem 0.9rem; font-size: 0.75rem; }
+  .menu-hero { padding-top: clamp(6.5rem, 22vw, 8rem); }
+}
