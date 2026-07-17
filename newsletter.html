@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>Newsletter | Longley's Restaurant & Bar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green-dark: #1a5632;
+      --gold: #d4a843;
+      --cream: #f5f1e8;
+      --dark: #1a1a1a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      font-family: 'Inter', system-ui, sans-serif;
+      color: var(--dark);
+      background: var(--cream);
+    }
+    .card {
+      width: 100%;
+      max-width: 500px;
+      background: #fff;
+      border: 1px solid #e7e2d5;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(26, 86, 50, 0.12);
+    }
+    .bar {
+      background: var(--green-dark);
+      padding: 26px 30px;
+      text-align: center;
+    }
+    .bar .brand {
+      margin: 0;
+      color: #fff;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 22px;
+      letter-spacing: .01em;
+    }
+    .bar .brand span { color: var(--gold); }
+    .inner { padding: 34px 30px 30px; text-align: center; }
+    .icon { font-size: 42px; line-height: 1; margin-bottom: 12px; }
+    h1 {
+      margin: 0 0 12px;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 26px;
+      color: var(--green-dark);
+    }
+    p { margin: 0 0 14px; color: #4b5563; line-height: 1.65; font-size: 15.5px; }
+    .actions { margin-top: 24px; display: flex; flex-direction: column; gap: 12px; }
+    .btn {
+      display: inline-block;
+      padding: 13px 26px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 15px;
+      text-decoration: none;
+      transition: background .2s;
+    }
+    .btn-primary { background: var(--green-dark); color: #fff; }
+    .btn-primary:hover { background: #124023; }
+    .btn-ghost { color: var(--green-dark); border: 1px solid #cfc9b8; }
+    .btn-ghost:hover { background: #f5f1e8; }
+    .muted { margin-top: 22px; font-size: 12.5px; color: #9ca3af; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="bar"><p class="brand">Longley<span>'s</span></p></div>
+    <div class="inner">
+      <div class="icon" id="icon">✓</div>
+      <h1 id="heading">You're on the list!</h1>
+      <div id="message">
+        <p>Thanks for confirming. You'll get our weekly specials and monthly
+           entertainment lineup straight to your inbox.</p>
+      </div>
+      <div class="actions">
+        <a class="btn btn-primary" href="/">Back to Longley's</a>
+        <a class="btn btn-ghost" id="music-link" href="/#music">See this month's live music &amp; events</a>
+      </div>
+      <p class="muted">Longley's Restaurant &amp; Bar &middot; 249 W Main St, Branford, CT</p>
+    </div>
+  </div>
+
+  <script>
+    // The confirm / unsubscribe edge functions redirect here with ?state=...
+    // because Supabase forces HTML served from *.supabase.co to render as plain
+    // text; the branded page lives on the site instead.
+    (function () {
+      var state = new URLSearchParams(location.search).get('state');
+      var icon = document.getElementById('icon');
+      var heading = document.getElementById('heading');
+      var message = document.getElementById('message');
+      var musicLink = document.getElementById('music-link');
+
+      var views = {
+        confirmed: {
+          icon: '✓',
+          heading: "You're on the list!",
+          html: "<p>Thanks for confirming. You'll get our weekly specials and monthly " +
+                "entertainment lineup straight to your inbox.</p>" +
+                "<p>Every email has an unsubscribe link if you ever change your mind.</p>",
+          showMusic: true
+        },
+        unsubscribed: {
+          icon: '👋',
+          heading: "You've been unsubscribed",
+          html: "<p>You won't receive any more emails from this list. Sorry to see you " +
+                "go - you're always welcome back if you change your mind.</p>",
+          showMusic: false
+        },
+        expired: {
+          icon: '⏳',
+          heading: "This link is no longer valid",
+          html: "<p>The link has expired or was already used. If you still want to join " +
+                "the list, just sign up again on our website.</p>",
+          showMusic: false
+        }
+      };
+
+      var view = views[state] || views.confirmed;
+      icon.textContent = view.icon;
+      heading.textContent = view.heading;
+      message.innerHTML = view.html;
+      if (!view.showMusic) musicLink.style.display = 'none';
+    })();
+  </script>
+</body>
+</html>
