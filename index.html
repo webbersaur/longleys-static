@@ -9,6 +9,33 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Longley's Restaurant & Bar",
+    "url": "https://longleysct.com/",
+    "telephone": "+12034885553",
+    "servesCuisine": "American",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "249 W Main St, Unit 8",
+      "addressLocality": "Branford",
+      "addressRegion": "CT",
+      "postalCode": "06405",
+      "addressCountry": "US"
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday", "Wednesday", "Thursday"], "opens": "11:30", "closes": "01:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday", "Saturday"], "opens": "11:30", "closes": "02:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "12:00", "closes": "00:00" }
+    ],
+    "menu": "https://longleysct.com/menu/",
+    "acceptsReservations": "https://www.opentable.com/r/longleys-reservations-branford",
+    "sameAs": ["https://www.facebook.com/CTLongleys"]
+  }
+  </script>
 </head>
 <body>
 
@@ -42,7 +69,7 @@
       <p class="hero-tagline">Food &nbsp;~&nbsp; Drinks &nbsp;~&nbsp; Friends</p>
       <p>Great food, cold drinks, and good times — right on Main Street.</p>
       <div class="hero-buttons">
-        <a href="tel:2034885553" class="btn btn-primary">Reserve a Table</a>
+        <a href="https://www.opentable.com/r/longleys-reservations-branford?restref=1471192&amp;lang=en-US&amp;ot_source=Restaurant%20website--" target="_blank" rel="noopener" class="btn btn-primary">Reserve a Table</a>
         <a href="#music" class="btn btn-outline">See What's On</a>
       </div>
       <!-- Weekly specials: populated at runtime from data/specials.json (see js/main.js). Hidden until a live, unexpired special is posted via the change portal. -->
@@ -90,9 +117,9 @@
       </div>
       <div class="about-text">
         <h2>More Than Just a Restaurant</h2>
-        <p>Longley's is a <span class="highlight">family-owned</span> spot serving up <span class="highlight">real homemade comfort food since 2023</span>. Whether you're catching the game with friends, grabbing lunch on the patio, or celebrating with the whole crew — we've got you covered.</p>
-        <p>Our full American menu runs from burgers and salads to <span class="highlight">hand-breaded appetizers</span>, daily specials, and all the bar-food favorites done right. Pair it with something from our <span class="highlight">full bar</span> — draft beer, craft cocktails, or an ice-cold pitcher — and settle in.</p>
-        <p>Located at <span class="highlight">249 W Main St, Unit 8</span> — right in the heart of Branford.</p>
+        <p>Longley's is a top-rated <span class="highlight">restaurant in Branford CT</span> serving <span class="highlight">real homemade comfort food since 2023</span>. This family-owned <span class="highlight">casual dining</span> spot on West Main Street offers a full American menu for lunch, dinner, and <a href="best-late-night-food-branford-ct/">late night dining in Branford</a> — with our kitchen open until 1–2 AM.</p>
+        <p>Our menu features hearty burgers, fresh salads, <span class="highlight">hand-breaded appetizers</span>, and daily specials — all made from scratch. Pair your meal with a cold draft beer, craft cocktail, or glass of wine from our <span class="highlight">full bar</span>. Join us every Friday for happy hour from 3 to 6, or check out our live music events on the weekends.</p>
+        <p>Located near the Branford and East Haven town line, Longley's is the restaurant in Branford CT you can count on for <a href="private-parties-catering-branford-ct/">catering and private parties</a>. Stop by, grab a seat at the bar, and discover <a href="why-locals-love-longleys/">why locals keep coming back</a>.</p>
       </div>
     </div>
   </section>
@@ -290,6 +317,66 @@
       </div>
       <div class="catering-img">
         <img src="images/hero-catering.jpeg" alt="Catering sliders and appetizers from Longley's Branford CT" width="600" height="400" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- From the Blog -->
+  <section id="blog" class="blog">
+    <div class="container">
+      <h2 class="section-title fade-in">From the Blog</h2>
+      <p class="section-subtitle fade-in">What's happening at Branford's neighborhood spot.</p>
+      <div class="specials-grid fade-in">
+        <a class="special-card" href="casual-dining-branford-ct/">
+          <h3>Casual Dining in Branford</h3>
+          <p>What makes Longley's different from every other spot in town.</p>
+          <span class="read-more">Read More</span>
+        </a>
+        <a class="special-card" href="live-music-branford-ct/">
+          <h3>Live Music in Branford</h3>
+          <p>Local bands every weekend — no cover, kitchen open till 2 AM.</p>
+          <span class="read-more">Read More</span>
+        </a>
+        <a class="special-card" href="private-parties-catering-branford-ct/">
+          <h3>Planning a Private Party</h3>
+          <p>Four spaces, custom menus, and full bar packages.</p>
+          <span class="read-more">Read More</span>
+        </a>
+        <a class="special-card" href="best-late-night-food-branford-ct/">
+          <h3>Best Late Night Food</h3>
+          <p>Full menu until 1–2 AM — long after everyone else closes.</p>
+          <span class="read-more">Read More</span>
+        </a>
+        <a class="special-card" href="best-burgers-branford-ct/">
+          <h3>Best Burgers in Branford</h3>
+          <p>Hand-formed daily, never frozen, built your way.</p>
+          <span class="read-more">Read More</span>
+        </a>
+        <a class="special-card" href="friday-happy-hour-branford-ct/">
+          <h3>Friday Happy Hour</h3>
+          <p>Drink specials and app deals every Friday, 3–6 PM.</p>
+          <span class="read-more">Read More</span>
+        </a>
+        <a class="special-card" href="taco-tuesday-branford-ct/">
+          <h3>Taco Tuesday</h3>
+          <p>Rotating fresh tacos and margarita specials from 4 PM.</p>
+          <span class="read-more">Read More</span>
+        </a>
+        <a class="special-card" href="catering-branford-ct/">
+          <h3>Catering in Branford</h3>
+          <p>Office lunches to wedding receptions, homemade and custom.</p>
+          <span class="read-more">Read More</span>
+        </a>
+        <a class="special-card" href="why-locals-love-longleys/">
+          <h3>Why Locals Love Longley's</h3>
+          <p>The story behind Branford's favorite neighborhood spot.</p>
+          <span class="read-more">Read More</span>
+        </a>
+        <a class="special-card" href="st-patricks-day-branford-ct/">
+          <h3>St. Patrick's Day at Longley's</h3>
+          <p>Scratch-made Irish classics, green beer, and live music.</p>
+          <span class="read-more">Read More</span>
+        </a>
       </div>
     </div>
   </section>

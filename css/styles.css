@@ -368,6 +368,41 @@ section[id] { scroll-margin-top: 80px; }
   font-weight: 600;
 }
 
+.about-text a {
+  color: var(--green-dark);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(45, 138, 78, 0.45);
+  transition: color 0.2s;
+}
+
+.about-text a:hover { color: var(--green-mid); }
+
+/* ---- From the Blog ---- */
+.blog { background: var(--cream); }
+
+.blog .special-card {
+  display: block;
+  background: #fff;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.blog .special-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
+
+.blog .read-more {
+  display: inline-block;
+  margin-top: 0.6rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--green-mid);
+}
+
 /* ---- Events ---- */
 .events { background: var(--cream); }
 
