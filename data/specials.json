@@ -1,6 +1,25 @@
 {
-  "posted": "",
-  "expires": "",
+  "posted": "2026-07-19",
+  "expires": "2026-07-26T23:59:59-04:00",
   "heading": "This Week's Specials",
-  "items": []
+  "items": [
+    {
+      "name": "Salmon Burger"
+    },
+    {
+      "name": "The Meatballs Panini"
+    },
+    {
+      "name": "Chipotle Chicken Panini"
+    },
+    {
+      "name": "Chicago Italian Hot Beef Sandwich"
+    },
+    {
+      "name": "Steak & Cheese Panini"
+    },
+    {
+      "name": "Sesame Encrusted Ahi Tuna over Seaweed Salad"
+    }
+  ]
 }
