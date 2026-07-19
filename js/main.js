@@ -52,9 +52,15 @@ async function renderSpecials() {
     return; // network/parse failure — leave the hero clean
   }
 
-  const items = Array.isArray(data.items)
-    ? data.items.map(s => String(s).trim()).filter(Boolean)
-    : [];
+  // Items arrive in two shapes: legacy plain strings, and {name, price} objects
+  // from the portal's specials library. Normalize both to {name, price} so the
+  // render loop stays single-path. Price is optional and free-form ("Market
+  // Price", "$12 / $18"), so it is never parsed as a number.
+  const items = (Array.isArray(data.items) ? data.items : [])
+    .map(it => typeof it === 'string'
+      ? { name: it.trim(), price: '' }
+      : { name: String(it?.name ?? '').trim(), price: String(it?.price ?? '').trim() })
+    .filter(it => it.name);
   if (!items.length) return;
 
   // Expiry: require a valid timestamp and hide once it has passed. A missing or
@@ -76,7 +82,15 @@ async function renderSpecials() {
   if (items.length > 6) list.classList.add('two-col'); // split long lists so they don't run down the page
   for (const item of items) {
     const li = document.createElement('li');
-    li.textContent = item; // verbatim, as typed — textContent guards against markup
+    const name = document.createElement('span');
+    name.textContent = item.name; // verbatim, as typed — textContent guards against markup
+    li.appendChild(name);
+    if (item.price) {
+      const price = document.createElement('span');
+      price.className = 'hero-specials-price';
+      price.textContent = item.price;
+      li.appendChild(price);
+    }
     list.appendChild(li);
   }
   mount.appendChild(list);

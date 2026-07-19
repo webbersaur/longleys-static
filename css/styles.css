@@ -197,6 +197,15 @@ ul { list-style: none; }
   font-weight: 700;
 }
 
+/* Optional price, appended after the dish name. Free-form text ("Market Price",
+   "$12 / $18"), so it must never wrap mid-value. */
+.hero-specials-price {
+  margin-left: 0.5rem;
+  white-space: nowrap;
+  color: var(--gold);
+  font-weight: 600;
+}
+
 .hero-specials-posted {
   margin-top: 1rem !important;
   margin-bottom: 0 !important;
