@@ -1,28 +1,34 @@
 {
-  "posted": "2026-07-20",
+  "posted": "2026-07-22",
   "expires": "2026-07-26T23:59:59-04:00",
   "heading": "This Week's Specials",
   "items": [
     {
-      "name": "Salmon Burger"
+      "name": "NEW ENGLAND CLAM CHOWDER 12"
     },
     {
-      "name": "The Meatballs Panini"
+      "name": "HEIRLOOM CAPRICE SALAD 15"
     },
     {
-      "name": "Chipotle Chicken Panini"
+      "name": "STEAK FRITES SLICED STEAK TIPS WITH CHIMICHURI SAUCE OVER"
     },
     {
-      "name": "Chicago Italian Hot Beef Sandwich"
+      "name": "HOUSE MADE FRIES 17"
     },
     {
-      "name": "Steak & Cheese Panini"
+      "name": "SESAME ENCRUSTED AHI TUNA OVER SEAWEED SALAD 15"
     },
     {
-      "name": "Sesame Encrusted Ahi Tuna over Seaweed Salad"
+      "name": "MARGARITA CAULIFLOWER PIZZA (GLUTEN FREE) 14"
     },
     {
-      "name": "Seaweed Salad"
+      "name": "SUMMER PASTA W/SHRIMP AND TOMATOES TOSSED IN A PESTO"
+    },
+    {
+      "name": "SAUCE 24"
+    },
+    {
+      "name": "SURF AND TURF CHOICE OF STEAK WITH SHRIMP SERVED WITH POTATO AND VEGGIE 32"
     }
   ]
 }
