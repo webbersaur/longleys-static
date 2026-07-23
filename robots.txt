@@ -1,6 +1,8 @@
 User-agent: *
 Allow: /
 Disallow: /proposal.html
+Disallow: /proposal/
 Disallow: /newsletter.html
+Disallow: /newsletter/
 
 Sitemap: https://longleysct.com/sitemap.xml

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found | Longley's Restaurant &amp; Bar - Branford, CT</title>
+  <meta name="robots" content="noindex, follow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <style>
+    .notfound {
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: var(--section-pad) 1.5rem;
+      background: var(--cream);
+    }
+    .notfound h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 6vw, 3.25rem);
+      color: var(--green-dark);
+      margin-bottom: 0.75rem;
+    }
+    .notfound p { color: #333; max-width: 55ch; margin: 0 auto 1.5rem; }
+    .notfound-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="logo">
+        <img src="/images/logo-white.png" alt="Longley's Restaurant Branford CT" width="180" height="50">
+      </a>
+      <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="/menu/">Menu</a></li>
+          <li><a href="/#music">Music</a></li>
+          <li><a href="/#events">Events</a></li>
+          <li><a href="/private-parties/">Parties</a></li>
+          <li><a href="/catering-menu/">Catering</a></li>
+          <li><a href="/photos/">Photos</a></li>
+          <li><a href="/#visit">Visit</a></li>
+          <li><a href="tel:2034885553" class="nav-cta">(203) 488-5553</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="notfound">
+    <div>
+      <h1>We couldn't find that page</h1>
+      <p>The page you're looking for has moved or no longer exists. Here's where most folks are headed:</p>
+      <div class="notfound-links">
+        <a href="/" class="btn btn-primary">Back Home</a>
+        <a href="/menu/" class="btn btn-outline">See the Menu</a>
+        <a href="/#music" class="btn btn-outline">Live Music</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Longley's Restaurant &amp; Bar. All rights reserved.</p>
+      <p>249 W Main St, Unit 8, Branford CT 06405</p>
+      <p><a href="tel:2034885553">(203) 488-5553</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>

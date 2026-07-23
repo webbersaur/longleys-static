@@ -1,0 +1,37 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": true,
+  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/off-premise-catering-2/",
+      "destination": "/off-premise-catering/",
+      "permanent": true
+    },
+    {
+      "source": "/about-us/",
+      "destination": "/why-locals-love-longleys/",
+      "permanent": true
+    },
+    {
+      "source": "/did-somebody-say-homemade/",
+      "destination": "/menu/",
+      "permanent": true
+    },
+    {
+      "source": "/happy/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/not-happy/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/thank-you/",
+      "destination": "/",
+      "permanent": true
+    }
+  ]
+}
