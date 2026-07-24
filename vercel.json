@@ -2,13 +2,8 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
   "trailingSlash": true,
+  "_comment": "www -> apex canonicalization is configured at the Vercel domain level (Domains > www.longleysct.com > redirect to longleysct.com, 308), not here. A host-based redirect in this file does not fire, because domain-level redirects run before vercel.json routing.",
   "redirects": [
-    {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": "www.longleysct.com" }],
-      "destination": "https://longleysct.com/:path*",
-      "permanent": true
-    },
     {
       "source": "/off-premise-catering-2/",
       "destination": "/off-premise-catering/",
