@@ -4,6 +4,11 @@
   "trailingSlash": true,
   "redirects": [
     {
+      "source": "/catering/",
+      "destination": "/catering-menu/",
+      "permanent": true
+    },
+    {
       "source": "/off-premise-catering-2/",
       "destination": "/off-premise-catering/",
       "permanent": true
