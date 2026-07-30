@@ -4,25 +4,14 @@
   "trailingSlash": true,
   "redirects": [
     {
-      "source": "/",
+      "source": "/(.*)",
       "has": [
         {
           "type": "host",
           "value": "longleys-static.vercel.app"
         }
       ],
-      "destination": "https://longleysct.com/",
-      "permanent": true
-    },
-    {
-      "source": "/:path*",
-      "has": [
-        {
-          "type": "host",
-          "value": "longleys-static.vercel.app"
-        }
-      ],
-      "destination": "https://longleysct.com/:path*",
+      "destination": "https://longleysct.com/$1",
       "permanent": true
     },
     {
