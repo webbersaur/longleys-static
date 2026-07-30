@@ -4,6 +4,28 @@
   "trailingSlash": true,
   "redirects": [
     {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "longleys-static.vercel.app"
+        }
+      ],
+      "destination": "https://longleysct.com/",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "longleys-static.vercel.app"
+        }
+      ],
+      "destination": "https://longleysct.com/:path*",
+      "permanent": true
+    },
+    {
       "source": "/catering/",
       "destination": "/catering-menu/",
       "permanent": true
