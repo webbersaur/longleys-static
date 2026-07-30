@@ -1,28 +1,35 @@
 {
-  "posted": "2026-07-23",
-  "expires": "2026-07-26T23:59:59-04:00",
+  "posted": "2026-07-30",
+  "expires": "2026-08-02T23:59:59-04:00",
   "heading": "This Week's Specials",
   "items": [
     {
       "name": "NEW ENGLAND CLAM CHOWDER 12"
     },
     {
-      "name": "MEXICAN STREET CORN 10"
-    },
-    {
       "name": "SESAME ENCRUSTED AHI TUNA OVER SEAWEED SALAD 15"
     },
     {
-      "name": "BUFFALO CHICKEN CAULIFLOWER PIZZA (GLUTEN FREE) 14"
+      "name": "STEAK FRITES SLICED STEAK TIPS WITH CHIMICHURI SAUCE OVER HOUSE MADE FRIES 17"
     },
     {
-      "name": "WATERMELLON AND FETA CHEESE SALAD TOPPED WITH BLACKENED SHRIMP 18"
+      "name": "ZUCCHINI FRIES W/A SIDE OF MARINARA DIPPING SAUCE 10"
     },
     {
-      "name": "TERIYAKI CHICKEN AND RICE BOWL SERVED WITH FRESH MIXED VEGGIES 19"
+      "name": "Surf and Turf with Choice of Steak and 1 1/4 Pound Lobster Dinner",
+      "price": "40"
     },
     {
-      "name": "SURF AND TURF CHOICE OF STEAK WITH SHRIMP SERVED WITH POTATO AND VEGGIE 32"
+      "name": "Lobster Roll with House made fries",
+      "price": "26"
+    },
+    {
+      "name": "Lobster Dinner with Potato and Fresh Veggie",
+      "price": "26"
+    },
+    {
+      "name": "1/2 Rack BBQ Baby Back Ribs with Fries and Cole Slaw",
+      "price": "19"
     }
   ]
 }
