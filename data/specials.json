@@ -1,35 +1,37 @@
 {
-  "posted": "2026-07-30",
-  "expires": "2026-08-02T23:59:59-04:00",
+  "posted": "2026-08-05",
+  "expires": "2026-08-09T23:59:59-04:00",
   "heading": "This Week's Specials",
   "items": [
     {
-      "name": "NEW ENGLAND CLAM CHOWDER 12"
-    },
-    {
       "name": "SESAME ENCRUSTED AHI TUNA OVER SEAWEED SALAD 15"
-    },
-    {
-      "name": "STEAK FRITES SLICED STEAK TIPS WITH CHIMICHURI SAUCE OVER HOUSE MADE FRIES 17"
-    },
-    {
-      "name": "ZUCCHINI FRIES W/A SIDE OF MARINARA DIPPING SAUCE 10"
-    },
-    {
-      "name": "Surf and Turf with Choice of Steak and 1 1/4 Pound Lobster Dinner",
-      "price": "40"
     },
     {
       "name": "Lobster Roll with House made fries",
       "price": "26"
     },
     {
-      "name": "Lobster Dinner with Potato and Fresh Veggie",
-      "price": "26"
-    },
-    {
       "name": "1/2 Rack BBQ Baby Back Ribs with Fries and Cole Slaw",
       "price": "19"
+    },
+    {
+      "name": "SURF AND TURF CHOICE OF STEAK WITH SHRIMP SERVED WITH POTATO AND VEGGIE 32"
+    },
+    {
+      "name": "Italian Sausage and White Bean Soup",
+      "price": "$10"
+    },
+    {
+      "name": "Summer Peach Salad W/Blackened Shrimp",
+      "price": "$19"
+    },
+    {
+      "name": "Crispy Buffalo Chicken Sandwich W/Fries",
+      "price": "$16"
+    },
+    {
+      "name": "Pan Seared Pork Tenderloin W/Garlic Mashed Potatoes",
+      "price": "$24"
     }
   ]
 }
