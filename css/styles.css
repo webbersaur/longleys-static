@@ -571,7 +571,7 @@ section[id] { scroll-margin-top: 80px; }
 
 .music-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(340px, 100%), 1fr));
   gap: 1rem;
   max-width: 920px;
   margin-inline: auto;
