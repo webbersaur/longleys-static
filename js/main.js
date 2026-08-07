@@ -39,6 +39,29 @@ function formatPostedDate(ymd) {
   return `${month} ${Number(m[3])}, ${m[1]}`;
 }
 
+// Specials are typed by hand in the portal and often arrive SHOUTED IN ALL CAPS.
+// Only fully-uppercase text is recased - anything typed with mixed case is left
+// verbatim, so a deliberate "BLT" or "Mac & Cheese" survives untouched.
+const TITLE_ACRONYMS = new Set(['BBQ', 'BLT', 'NY', 'CT', 'IPA', 'PEI', 'LTO']);
+const TITLE_MINOR = new Set(['a', 'an', 'and', 'the', 'or', 'of', 'with', 'w/', 'in',
+  'on', 'over', 'to', 'for', 'at', 'by', 'from']);
+
+function toTitleCase(text) {
+  if (/[a-z]/.test(text)) return text; // already mixed case - as typed
+  let word = 0;
+  return text.split(/(\s+)/).map(part => { // keep whitespace so spacing survives
+    if (!part || /^\s+$/.test(part)) return part;
+    const i = word++;
+    if (TITLE_ACRONYMS.has(part.replace(/[^A-Za-z&]/g, '').toUpperCase())) return part.toUpperCase();
+    const lower = part.toLowerCase();
+    if (i > 0 && TITLE_MINOR.has(lower)) return lower;
+    // Capitalize the start of the word and after a hyphen, slash, or open paren.
+    // The apostrophe case only fires with 2+ letters after it, so "Chef's" stays
+    // right while "O'Brien" still capitalizes.
+    return lower.replace(/(^|[-/(]|'(?=[a-z]{2}))([a-z])/g, (_, pre, c) => pre + c.toUpperCase());
+  }).join('');
+}
+
 async function renderSpecials() {
   const mount = document.getElementById('hero-specials');
   if (!mount) return;
@@ -69,7 +92,7 @@ async function renderSpecials() {
   if (Number.isNaN(expiresAt) || Date.now() > expiresAt) return;
 
   const heading = (typeof data.heading === 'string' && data.heading.trim())
-    ? data.heading.trim()
+    ? toTitleCase(data.heading.trim())
     : "This Week's Specials";
 
   const h = document.createElement('h2');
@@ -83,7 +106,7 @@ async function renderSpecials() {
   for (const item of items) {
     const li = document.createElement('li');
     const name = document.createElement('span');
-    name.textContent = item.name; // verbatim, as typed — textContent guards against markup
+    name.textContent = toTitleCase(item.name); // textContent guards against markup
     li.appendChild(name);
     if (item.price) {
       const price = document.createElement('span');
