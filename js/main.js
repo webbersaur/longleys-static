@@ -160,6 +160,19 @@ function pruneEvents() {
 
 pruneEvents();
 
+// Timed promo sections (e.g. the "This Week" lobster block) carry a
+// `data-expires` timestamp. Once it passes, the section hides itself so a
+// stale week's promo never lingers. A missing or malformed timestamp is left
+// alone (never auto-hidden).
+function prunePromos() {
+  document.querySelectorAll('section[data-expires]').forEach(section => {
+    const expiresAt = Date.parse(section.getAttribute('data-expires'));
+    if (!Number.isNaN(expiresAt) && Date.now() > expiresAt) section.hidden = true;
+  });
+}
+
+prunePromos();
+
 // Newsletter signup — posts to the change-portal newsletter-subscribe edge
 // function (double opt-in: this only sends a confirmation email; the address
 // isn't subscribed until the recipient clicks the link). The endpoint is a
