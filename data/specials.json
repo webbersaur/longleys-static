@@ -1,37 +1,37 @@
 {
-  "posted": "2026-08-05",
-  "expires": "2026-08-09T23:59:59-04:00",
+  "posted": "2026-08-13",
+  "expires": "2026-08-16T23:59:59-04:00",
   "heading": "This Week's Specials",
   "items": [
     {
-      "name": "SESAME ENCRUSTED AHI TUNA OVER SEAWEED SALAD 15"
+      "name": "Sesame Encrusted Ahi Tuna over Seaweed Salad 15"
     },
     {
       "name": "Lobster Roll with House made fries",
-      "price": "26"
-    },
-    {
-      "name": "1/2 Rack BBQ Baby Back Ribs with Fries and Cole Slaw",
-      "price": "19"
-    },
-    {
-      "name": "SURF AND TURF CHOICE OF STEAK WITH SHRIMP SERVED WITH POTATO AND VEGGIE 32"
+      "price": "27"
     },
     {
       "name": "Italian Sausage and White Bean Soup",
       "price": "$10"
     },
     {
-      "name": "Summer Peach Salad W/Blackened Shrimp",
-      "price": "$19"
+      "name": "Braised Short Ribs W/Mashed and Veggie"
     },
     {
-      "name": "Crispy Buffalo Chicken Sandwich W/Fries",
-      "price": "$16"
+      "name": "Veggie Burger W/Lettuce, Tomato and Chipotle Ranch",
+      "price": "$15"
     },
     {
-      "name": "Pan Seared Pork Tenderloin W/Garlic Mashed Potatoes",
-      "price": "$24"
+      "name": "Buffalo Chicken Cauliflower Pizza",
+      "price": "$15"
+    },
+    {
+      "name": "Short Rib Tacos W/Pickled Onions, Cilantro and a Roasted Jalapeno Aioli",
+      "price": "$14"
+    },
+    {
+      "name": "Surf and Turf with Choice of Steak and 1 1/4 Pound Lobster Dinner",
+      "price": "42"
     }
   ]
 }
