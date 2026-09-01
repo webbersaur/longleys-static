@@ -756,6 +756,52 @@ a.gig:focus-visible .gig-cta {
 
 .gig-featured .gig-mon { color: #fff8e6; }
 
+/* Event flyers under the lineup. Each figure carries its own data-expires so
+   a flyer drops the night of the show; the strip itself expires with the last
+   one. Portrait art, so cap the width or it dwarfs the calendar above it. */
+.flyer-strip {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 920px;
+  margin: 2.5rem auto 0;
+}
+
+.flyer {
+  flex: 1 1 260px;
+  max-width: 320px;
+}
+
+.flyer img {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  transition: transform 0.25s, border-color 0.25s;
+}
+
+.flyer a:hover img,
+.flyer a:focus-visible img {
+  transform: translateY(-4px);
+  border-color: rgba(212, 168, 67, 0.6);
+}
+
+.flyer figcaption {
+  margin-top: 0.85rem;
+  text-align: center;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.flyer figcaption a {
+  color: var(--gold);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 .music-note {
   text-align: center;
   margin-top: 2.5rem;
