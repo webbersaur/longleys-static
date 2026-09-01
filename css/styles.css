@@ -674,6 +674,32 @@ section[id] { scroll-margin-top: 80px; }
   border-color: rgba(212, 168, 67, 0.6);
 }
 
+/* Ticketed events link out - the whole row is the click target. */
+a.gig {
+  text-decoration: none;
+  color: inherit;
+}
+
+.gig-cta {
+  flex: none;
+  margin-left: auto;
+  padding: 0.45rem 0.9rem;
+  border: 1px solid rgba(212, 168, 67, 0.6);
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+  transition: background 0.25s, color 0.25s;
+}
+
+a.gig:hover .gig-cta,
+a.gig:focus-visible .gig-cta {
+  background: var(--gold);
+  color: var(--green-dark);
+}
+
 .gig-cal {
   flex: none;
   width: 62px;
