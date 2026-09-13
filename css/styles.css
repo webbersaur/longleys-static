@@ -77,6 +77,7 @@ ul { list-style: none; }
   font-weight: 500;
   letter-spacing: 0.04em;
   text-transform: uppercase;
+  white-space: nowrap;
   transition: color 0.2s;
 }
 
@@ -969,6 +970,14 @@ a.gig:focus-visible .gig-cta {
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* ---- Tablet: eight links plus the phone CTA don't fit at desktop spacing ---- */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .logo img { height: 42px; }
+  .nav-list { gap: 1rem; margin-left: 1rem; }
+  .nav-list a { font-size: 0.8rem; letter-spacing: 0.02em; }
+  .nav-cta { padding: 0.45rem 0.85rem; }
 }
 
 /* ---- Mobile ---- */
