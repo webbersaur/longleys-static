@@ -1,6 +1,39 @@
 {
-  "posted": "2026-08-24",
-  "expires": "2026-08-30T23:59:59-04:00",
+  "posted": "2026-10-01",
+  "expires": "2026-10-04T23:59:59-04:00",
   "heading": "This Week's Specials",
-  "items": []
+  "items": [
+    {
+      "name": "Chicken Noodle Soup",
+      "price": "10"
+    },
+    {
+      "name": "Giant Loaded Taco Baked Potato",
+      "price": "12"
+    },
+    {
+      "name": "Zucchini Fries with a Side of Marinara Dipping Sauce",
+      "price": "10"
+    },
+    {
+      "name": "Sesame Encrusted Ahi Tuna over Seaweed Salad",
+      "price": "$15"
+    },
+    {
+      "name": "Steak Frites over House Made Fries with a Roasted Garlic Aioli",
+      "price": "16"
+    },
+    {
+      "name": "Chicken Teriyaki Rice Bowl",
+      "price": "18"
+    },
+    {
+      "name": "Blackened Ahi Tuna Wrap",
+      "price": "19"
+    },
+    {
+      "name": "Surf and Turf with Choice of Steak Topped with Sauteed Shrimp",
+      "price": "32"
+    }
+  ]
 }
