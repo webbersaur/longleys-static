@@ -1,35 +1,39 @@
 {
-  "posted": "2026-10-15",
-  "expires": "2026-10-18T23:59:59-04:00",
+  "posted": "2026-10-23",
+  "expires": "2026-10-26T00:00:00-04:00",
   "heading": "This Week's Specials",
   "items": [
     {
-      "name": "Shrimp and Corn Chowder",
+      "name": "New England Clam Chowder",
       "price": "12"
     },
     {
       "name": "Sesame Encrusted Ahi Tuna over Seaweed Salad",
-      "price": "$15"
-    },
-    {
-      "name": "Carnitas Rice Bowl",
-      "price": "17"
-    },
-    {
-      "name": "Steak Frites",
       "price": "15"
     },
     {
-      "name": "1/2 Rack BBQ Baby Back Ribs with Fries and Cole Slaw",
+      "name": "Spicy Ahi Tuna Nachos with Cucumber, Red Onions, Scallions and Chili Sriracha Sauce",
+      "price": "17"
+    },
+    {
+      "name": "Hot Lobster Roll with Fries",
+      "price": "Single $26 / Double $46"
+    },
+    {
+      "name": "1/2 Rack Baby Back Ribs with Fries and Cole Slaw",
       "price": "19"
     },
     {
-      "name": "Lobster Ravioli",
-      "price": "28"
+      "name": "Lobster Dinner with Potato and Veggie",
+      "price": "26"
     },
     {
-      "name": "Surf and Turf with Choice of Steak Topped with Sauteed Shrimp",
+      "name": "Creamy Tuscan Seafood Plate - Shrimp, Lobster and Mussels over Linguini",
       "price": "32"
+    },
+    {
+      "name": "Surf and Turf - Choice of Steak with Lobster, Potato and Veggie",
+      "price": "44"
     }
   ]
 }
