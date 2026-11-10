@@ -772,6 +772,9 @@ a.gig:focus-visible .gig-cta {
 .flyer {
   flex: 1 1 260px;
   max-width: 320px;
+  /* Calendar "Details" links jump here: clear the fixed header (~74px) plus
+     the strip's 24px fade-in offset, which settles after the jump lands. */
+  scroll-margin-top: 124px;
 }
 
 .flyer img {
